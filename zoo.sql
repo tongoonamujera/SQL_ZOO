@@ -68,3 +68,27 @@ SELECT * FROM nobel
   WHERE (yr >= 1980
     AND yr <= 1989)
       AND subject IN ('Literature')
+
+--Select within select
+--Select in select 1
+SELECT name FROM world
+  WHERE population >
+    (SELECT population FROM world
+      WHERE name='Russia')
+
+--select in select 2
+SELECT name FROM world
+  WHERE continent = 'Europe'
+  AND gdp/population >
+      (SELECT gdp/population FROM world
+      WHERE name = 'United Kingdom')
+
+--SUM AND COUNT
+SELECT SUM(population)
+  FROM world
+
+SELECT SUM(gdp) FROM world
+  WHERE continent = 'Africa'
+
+SELECT COUNT(name) FROM world
+  WHERE area >= 1000000
