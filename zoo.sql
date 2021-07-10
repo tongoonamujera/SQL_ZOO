@@ -39,3 +39,27 @@ ORDER BY name
 
 SELECT name FROM world
   WHERE name LIKE '%o__o%'
+
+SELECT name
+  FROM world
+WHERE name = capital
+
+SELECT name
+  FROM world
+WHERE capital LIKE '__% %City%'
+
+-- Select from NOBEL
+
+SELECT winner
+  FROM nobel
+WHERE yr = 1962
+AND subject = 'Literature'
+
+SELECT yr, subject
+  FROM nobel
+WHERE winner = 'Albert Einstein'
+
+SELECT winner
+  FROM nobel
+  WHERE subject = 'Peace'
+    AND yr >= 2000
