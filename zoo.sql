@@ -63,3 +63,8 @@ SELECT winner
   FROM nobel
   WHERE subject = 'Peace'
     AND yr >= 2000
+
+SELECT * FROM nobel
+  WHERE (yr >= 1980
+    AND yr <= 1989)
+      AND subject IN ('Literature')
